@@ -33,6 +33,8 @@ require('./config/passport')(passport);
 app.use('/api/users', users);
 app.use('/api/profile', profile);
 app.use('/api/posts', posts);
+// NEW - serve image from
+app.use(express.static('client'));
 
 // Server static assets if in production
 if (process.env.NODE_ENV === 'production') {
